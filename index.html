@@ -8,126 +8,247 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap');
-        body { font-family: 'Open Sans', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        
+        :root {
+            --primary: #1a5f3d;
+            --primary-light: #2d8a5a;
+            --secondary: #c5a059;
+            --dark: #1f2937;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
         .hero-bg {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
         }
-        @media print { .no-print { display: none !important; } }
+
+        .forest-bg {
+            background: linear-gradient(rgba(243, 244, 246, 0.9), rgba(243, 244, 246, 0.9)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .service-card:hover .service-overlay {
+            opacity: 1;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <header class="hero-bg h-screen flex flex-col justify-center items-center text-white text-center px-4 relative">
-        <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg tracking-tight text-white">GRUPO MONTASA DN S.L</h1>
-        <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl drop-shadow-md">Reformas, Construcción, Trabajos Forestales & Medio Ambiente</p>
-        <div class="border-t-4 border-green-500 w-32 mb-8 rounded-full"></div>
-        <p class="uppercase tracking-widest text-sm text-gray-300 font-bold mb-8">Dossier Corporativo 2026</p>
-        <a href="#contacto" class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white transition duration-300 rounded-full font-semibold shadow-lg no-print">Solicitar Presupuesto</a>
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-30"></div>
+        <div class="relative z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg tracking-tight uppercase">GRUPO MONTASA DN S.L</h1>
+            <p class="text-xl md:text-2xl font-light mb-8 max-w-2xl mx-auto drop-shadow-md">Reformas, Construcción, Trabajos Forestales & Medio Ambiente</p>
+            <div class="border-t-4 border-green-500 w-32 mx-auto mb-8 rounded-full"></div>
+            <p class="uppercase tracking-widest text-sm text-gray-300 font-bold mb-12">Dossier Corporativo 2026</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center no-print">
+                <a href="#servicios" class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white transition duration-300 rounded-full font-semibold shadow-lg">Ver Servicios</a>
+                <a href="#contacto" class="px-8 py-3 bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white transition duration-300 rounded-full font-semibold">Contactar</a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 animate-bounce no-print">
+            <a href="#quienes-somos"><i class="fas fa-chevron-down text-3xl"></i></a>
+        </div>
     </header>
 
-    <section class="py-20 px-6 md:px-20 bg-white">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl font-bold mb-6 text-gray-900">Quiénes Somos <span class="block h-1 w-12 bg-green-500 mt-2"></span></h2>
-                <p class="text-gray-600 mb-4 leading-relaxed">En <strong>GRUPO MONTASA DN S.L</strong> somos una empresa multidisciplinar que combina la solidez de la construcción tradicional con el respeto y cuidado del medio ambiente.</p>
-                <p class="text-gray-600 leading-relaxed">Contamos con maquinaria especializada y un equipo técnico cualificado para garantizar la excelencia en cada intervención.</p>
+    <section id="quienes-somos" class="py-24 px-6 md:px-20 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <div class="relative">
+                    <img src="WhatsApp Image 2025-09-18 at 12.50.06.jpg" alt="Equipo Montasa" class="rounded-lg shadow-2xl relative z-10 w-full object-cover h-[500px]">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-green-100 rounded-lg -z-0"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-100 rounded-lg -z-0"></div>
+                </div>
             </div>
-            <img src="WhatsApp Image 2025-09-18 at 12.50.06.jpg" class="rounded-lg shadow-xl h-96 object-cover w-full">
+            <div class="order-1 md:order-2">
+                <h2 class="text-blue-900 text-sm font-bold uppercase tracking-widest mb-3">Nuestra Empresa</h2>
+                <h3 class="text-4xl font-bold mb-8 text-gray-900 leading-tight">Compromiso con la Excelencia y el Entorno</h3>
+                <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                    En <strong>GRUPO MONTASA DN S.L</strong> somos una empresa multidisciplinar que combina la solidez de la construcción tradicional con el respeto y cuidado del medio ambiente.
+                </p>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Nuestra capacidad para gestionar proyectos tanto en entornos urbanos como naturales nos distingue. Contamos con maquinaria especializada y un equipo técnico cualificado.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <p class="text-3xl font-bold text-gray-900">100%</p>
+                        <p class="text-sm text-gray-500 uppercase">Profesionalidad</p>
+                    </div>
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <p class="text-3xl font-bold text-gray-900">24/7</p>
+                        <p class="text-sm text-gray-500 uppercase">Compromiso</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="py-16 bg-gray-900 text-white no-print">
+    <section class="py-20 bg-gray-900 text-white overflow-hidden no-print">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-10 text-center">Capacidad Operativa</h2>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-green-500 font-bold uppercase tracking-widest mb-2">Infraestructura</h2>
+                    <h3 class="text-4xl font-bold">Capacidad Operativa</h3>
+                </div>
+                <p class="text-gray-400 max-w-md mt-4 md:mt-0 italic">Equipamiento avanzado para los retos más exigentes.</p>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-800 p-4 rounded-2xl border border-gray-700">
-                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-helicopter mr-2 text-green-500"></i> Logística Aérea</h3>
-                    <video class="w-full rounded-xl shadow-2xl" controls preload="none"><source src="WhatsApp Video 2025-10-16 at 13.47.44.mp4" type="video/mp4"></video>
+                <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-green-500 transition duration-300 shadow-2xl">
+                    <h4 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-helicopter mr-3 text-green-500"></i> Logística Aérea</h4>
+                    <div class="rounded-xl overflow-hidden aspect-video">
+                        <video class="w-full h-full object-cover" controls preload="none">
+                            <source src="WhatsApp Video 2025-10-16 at 13.47.44.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-4 rounded-2xl border border-gray-700">
-                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-tractor mr-2 text-green-500"></i> Maquinaria Pesada</h3>
-                    <video class="w-full rounded-xl shadow-2xl" controls preload="none"><source src="WhatsApp Video 2025-02-26 at 18.45.45.mp4" type="video/mp4"></video>
+                <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-blue-500 transition duration-300 shadow-2xl">
+                    <h4 class="text-xl font-bold mb-4 flex items-center"><i class="fas fa-tractor mr-3 text-blue-400"></i> Maquinaria Pesada</h4>
+                    <div class="rounded-xl overflow-hidden aspect-video">
+                        <video class="w-full h-full object-cover" controls preload="none">
+                            <source src="WhatsApp Video 2025-02-26 at 18.45.45.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-6 md:px-20 bg-white">
+    <section id="servicios" class="py-24 px-6 md:px-20 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">Nuestros Servicios</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
-                <div class="relative rounded-xl shadow-lg h-80 overflow-hidden group">
-                    <img src="WhatsApp Image 2026-01-14 at 11.29.21 (2).jpeg" class="w-full h-full object-cover transition transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black p-6 flex flex-col justify-end"><h4 class="font-bold text-xl text-white">Reformas</h4></div>
+            <div class="text-center mb-16">
+                <h2 class="text-gray-800 text-3xl md:text-5xl font-bold mb-4">Nuestros Servicios</h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl h-[450px]">
+                    <img src="WhatsApp Image 2026-01-14 at 11.29.21 (2).jpeg" alt="Reformas" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <div class="bg-green-600 w-12 h-1 mb-4 transition-all duration-500 group-hover:w-full"></div>
+                        <h4 class="text-white text-2xl font-bold mb-2">Reformas Integrales</h4>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500">Transformamos espacios con acabados de alta calidad.</p>
+                    </div>
                 </div>
-                <div class="relative rounded-xl shadow-lg h-80 overflow-hidden group">
-                    <img src="WhatsApp Image 2026-01-14 at 11.29.22.jpeg" class="w-full h-full object-cover transition transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black p-6 flex flex-col justify-end"><h4 class="font-bold text-xl text-white">Construcción</h4></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl h-[450px]">
+                    <img src="WhatsApp Image 2026-01-14 at 11.29.22.jpeg" alt="Construcción" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <div class="bg-blue-600 w-12 h-1 mb-4 transition-all duration-500 group-hover:w-full"></div>
+                        <h4 class="text-white text-2xl font-bold mb-2">Construcción</h4>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500">Estructuras sólidas y proyectos de edificación.</p>
+                    </div>
                 </div>
-                <div class="relative rounded-xl shadow-lg h-80 overflow-hidden group">
-                    <img src="forestal.jpg" class="w-full h-full object-cover transition transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black p-6 flex flex-col justify-end"><h4 class="font-bold text-xl text-white">Trabajos Forestales</h4></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl h-[450px]">
+                    <img src="forestal.jpg" alt="Trabajos Forestales" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <div class="bg-green-700 w-12 h-1 mb-4 transition-all duration-500 group-hover:w-full"></div>
+                        <h4 class="text-white text-2xl font-bold mb-2">Trabajos Forestales</h4>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500">Gestión de montes y mantenimiento forestal.</p>
+                    </div>
                 </div>
-                <div class="relative rounded-xl shadow-lg h-80 overflow-hidden group">
-                    <img src="WhatsApp Image 2026-01-14 at 11.29.21 (3).jpeg" class="w-full h-full object-cover transition transform group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black p-6 flex flex-col justify-end"><h4 class="font-bold text-xl text-white">Medio Ambiente</h4></div>
+                <div class="group relative overflow-hidden rounded-2xl shadow-xl h-[450px]">
+                    <img src="WhatsApp Image 2026-01-14 at 11.29.21 (3).jpeg" alt="Medio Ambiente" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent flex flex-col justify-end p-8">
+                        <div class="bg-yellow-600 w-12 h-1 mb-4 transition-all duration-500 group-hover:w-full"></div>
+                        <h4 class="text-white text-2xl font-bold mb-2">Medio Ambiente</h4>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition duration-500">Conservación y servicios ecosistémicos especializados.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 px-6 bg-gray-100 no-print">
-        <div class="max-w-6xl mx-auto text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Galería de Proyectos</h2>
-        </div>
-        <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
-            <img src="WhatsApp Image 2025-09-18 at 12.49.56.jpg" class="h-64 w-full object-cover rounded-lg shadow-md">
-            <img src="WhatsApp Image 2026-01-14 at 11.29.21.jpeg" class="h-64 w-full object-cover rounded-lg shadow-md">
-            <img src="WhatsApp Image 2026-01-14 at 11.29.21 (1).jpeg" class="h-64 w-full object-cover rounded-lg shadow-md">
+    <section class="py-24 px-6 md:px-20 bg-gray-50 no-print">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 flex items-center">
+                Galería de Proyectos <span class="ml-4 h-[2px] bg-gray-300 flex-grow"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="rounded-xl overflow-hidden shadow-lg h-64 border-4 border-white">
+                    <img src="WhatsApp Image 2025-09-18 at 12.49.56.jpg" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg h-64 border-4 border-white">
+                    <img src="WhatsApp Image 2026-01-14 at 11.29.21.jpeg" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg h-64 border-4 border-white">
+                    <img src="WhatsApp Image 2026-01-14 at 11.29.21 (1).jpeg" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-20 px-6 bg-gray-50">
-        <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-            <div class="p-10 md:w-1/2 bg-blue-600 text-white flex flex-col justify-center">
-                <h3 class="text-3xl font-bold mb-8">Contacto Directo</h3>
-                <div class="space-y-6 text-lg">
-                    <p><i class="fas fa-phone-alt w-10 text-blue-200"></i> +34 676 154 177</p>
-                    <p><i class="fas fa-envelope w-10 text-blue-200"></i> m.delgado@grupomontasa.com</p>
-                    <p><i class="fas fa-map-marker-alt w-10 text-blue-200"></i> Santa Olalla del Cala, Huelva</p>
+    <section id="contacto" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col md:flex-row border border-gray-100">
+            <div class="p-12 md:w-5/12 bg-blue-600 text-white flex flex-col justify-center">
+                <h3 class="text-3xl font-bold mb-8 uppercase tracking-tighter">Información de Contacto</h3>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone-alt w-10 text-xl text-blue-200"></i>
+                        <span>+34 676 154 177</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope w-10 text-xl text-blue-200"></i>
+                        <span class="text-sm">m.delgado@grupomontasa.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt w-10 text-xl text-blue-200"></i>
+                        <span class="text-sm">C/ Ramón y Cajal, 3, Santa Olalla del Cala, Huelva</span>
+                    </div>
                 </div>
-                <div class="mt-12 no-print">
-                    <button onclick="window.print()" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-50 transition shadow-lg flex items-center gap-2">
-                        <i class="fas fa-file-pdf"></i> Descargar Dossier PDF
+
+                <div class="mt-12 no-print border-t border-blue-500 pt-8">
+                    <button onclick="window.print()" class="w-full bg-white text-blue-600 font-bold py-4 px-6 rounded-xl hover:bg-blue-50 transition shadow-xl flex items-center justify-center gap-3">
+                        <i class="fas fa-file-pdf text-xl"></i>
+                        DESCARGAR DOSSIER PDF
                     </button>
+                    <p class="text-xs text-blue-200 mt-4 italic text-center leading-tight">
+                        * Pulse el botón y seleccione "Guardar como PDF" para tener el dossier en su dispositivo.
+                    </p>
                 </div>
             </div>
-            <div class="p-10 md:w-1/2">
-                <h3 class="text-2xl font-bold mb-6 text-gray-900">Envíenos un mensaje</h3>
+            
+            <div class="p-12 md:w-7/12">
+                <h3 class="text-2xl font-bold mb-8 text-gray-800">Solicitar Presupuesto o Información</h3>
                 <form action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST" class="space-y-4">
                     <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2">Nombre Completo</label>
-                        <input type="text" name="nombre" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <label class="block text-gray-700 text-xs font-bold mb-2 uppercase tracking-widest">Su Nombre</label>
+                        <input type="text" name="nombre" required class="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Nombre completo o Empresa">
                     </div>
                     <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                        <input type="email" name="email" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                        <label class="block text-gray-700 text-xs font-bold mb-2 uppercase tracking-widest">Correo Electrónico</label>
+                        <input type="email" name="email" required class="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="ejemplo@correo.com">
                     </div>
                     <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2">Mensaje</label>
-                        <textarea name="mensaje" required class="w-full p-3 border rounded-lg h-32 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+                        <label class="block text-gray-700 text-xs font-bold mb-2 uppercase tracking-widest">¿En qué podemos ayudarle?</label>
+                        <textarea name="mensaje" required class="w-full p-4 border border-gray-200 rounded-xl h-32 focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="Describa su proyecto..."></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-gray-900 text-white font-bold py-4 rounded-lg hover:bg-black transition no-print shadow-lg">Enviar Formulario</button>
+                    <input type="hidden" name="_subject" value="Nuevo contacto desde Dossier Online">
+                    
+                    <button type="submit" class="w-full bg-gray-900 text-white font-bold py-5 rounded-xl hover:bg-black transition no-print shadow-xl uppercase tracking-widest text-sm">
+                        Enviar Consulta Ahora
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-500 py-10 text-center">
-        <p>© 2026 GRUPO MONTASA DN S.L. - Todos los derechos reservados.</p>
+    <footer class="bg-gray-900 text-gray-500 py-12 text-center text-sm">
+        <div class="max-w-6xl mx-auto px-6 border-t border-gray-800 pt-8">
+            <p class="mb-4 font-bold text-gray-300 tracking-widest uppercase">Grupo Montasa DN S.L</p>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+        </div>
     </footer>
 
 </body>
